@@ -11,7 +11,7 @@ class AESModel extends Model
     use CompositePrimaryKey;
     use TableSuffix;
 
-    protected $table='aes_';
+    protected $table='AES_';
     protected $primaryKey=['decode','key'];
     protected $guarded=[];
 }
