@@ -11,22 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Controller@index');
 
+Route::get('/pay','PaymentController@payByAlipay')->name('test_alipay');
+Route::get('/payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
+Route::post('/payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
 
-
-
-
-
+Route::get('/pay_wechar','PaymentController@payByWechatpay')->name('pay_wechar');
 
 
 
 
 
 //兜底路由
-Route::fallback(function (){
+Route::fallback(function () {
 
     return 'no match routes';
 

@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <a href="{{route('test_alipay')}}">alipay test</a>
+                </div>
+
+                <div class="title m-b-md">
+                    <a href="{{route('pay_wechar')}}">wechatpay test</a>
                 </div>
 
                 <div class="links">
