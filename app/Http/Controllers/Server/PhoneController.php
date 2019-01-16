@@ -6,6 +6,7 @@ use App\Http\Controllers\ApiBaseController;
 use App\model\PhoneModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 
 class PhoneController extends ApiBaseController
 {

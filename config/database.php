@@ -53,6 +53,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
+            'sticky' => true,
             'engine' => null,
         ],
 

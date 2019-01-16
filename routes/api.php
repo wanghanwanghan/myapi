@@ -14,16 +14,18 @@ use Illuminate\Http\Request;
 */
 
 //查ip归属地
-Route::match(['post','get'],'/ip', 'Server\\IpController@show');
+Route::group(['namespace'=>'Server'],function (){
 
-//查手机归属地
-Route::match(['post','get'],'/phone', 'Server\\PhoneController@show');
+    Route::match(['post','get'],'/ip', 'IpController@show');
 
-//加密
-Route::match(['post','get'],'/encode','Server\\AESController@encode');
+    Route::match(['post','get'],'/phone', 'PhoneController@show');
 
-//解密
-Route::match(['post','get'],'/decode','Server\\AESController@decode');
+    Route::match(['post','get'],'/encode','AESController@encode');
+
+    Route::match(['post','get'],'/decode','AESController@decode');
+
+});
+
 
 //兜底路由
 Route::fallback(function (){

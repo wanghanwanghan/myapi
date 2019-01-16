@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Endroid\QrCode\QrCode;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -22,20 +22,25 @@ class PaymentController extends Controller
     public function alipayReturn()
     {
         $data = app('alipay')->verify();
-        dd($data);
+
+        Log::debug('支付宝回调前台');
+
+        return redirect('');
     }
 
     //服务器回调
     public function alipayNotify()
     {
         $data = app('alipay')->verify();
-        \Log::debug('Alipay notify', $data->all());
+
+        Log::debug('支付宝回调后台');
     }
 
     public function payByWechatpay()
     {
         $qr=new QrCode('你是我闺女，盖章，签字，生效！');
 
+        //return response()->json();
         return response($qr->writeString(), 200, ['Content-Type' => $qr->getContentType()]);
     }
 

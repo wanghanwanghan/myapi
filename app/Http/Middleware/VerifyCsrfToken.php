@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
 
         //csrf白名单
         'payment/alipay/notify',
+        'upload',
 
     ];
 }
